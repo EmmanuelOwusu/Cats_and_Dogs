@@ -33,7 +33,7 @@ Optimizer : Gradient descent with Momentum
 ----------------------------------------------------
 
 
-# Run FIle : python main.py
+Run FIle : python main.py
 
 --------------------------------------
 
