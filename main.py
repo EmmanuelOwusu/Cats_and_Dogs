@@ -135,6 +135,6 @@ model_cnn = CNN4(input_size, n_features, output_size)
 optimizer = optim.SGD(model_cnn.parameters(), lr=0.01, momentum=0.5)
 print('Number of parameters: {}'.format(get_n_params(model_cnn)))
 
-# for epoch in range(0, 5):
-#     train(epoch, model_cnn)
-#     test(model_cnn)
+for epoch in range(0, 5):
+    train(epoch, model_cnn)
+    test(model_cnn)
