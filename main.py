@@ -13,7 +13,7 @@ from PIL import Image
 from torch.utils.data import DataLoader
 
 from dataset import datasetloader
-from model import CNN
+from model import CNN,CNN4
 
 
 #function to count number of parameters
@@ -23,7 +23,7 @@ def get_n_params(model):
         np += p.nelement()
     return np
 
-input_size  = 224*224*3   # images are 224*224 pixels and has 3 channels because of RGB color
+input_size  = 284*284*3   # images are 284*284 pixels and has 3 channels because of RGB color
 output_size = 2      # there are 2 classes---Cat and dog
 
 # number of subprocesses to use for data loading
@@ -39,32 +39,25 @@ test_dir = os.path.join(data_dir, 'test/')
 
 
 #create transformers
-train_transform = transforms.Compose([transforms.RandomResizedCrop(size=256, scale=(0.8, 1.0)),
+train_transform = transforms.Compose([transforms.RandomResizedCrop(size=284, scale=(0.8, 1.0)),
                                     transforms.RandomRotation(degrees=15),
                                     transforms.RandomHorizontalFlip(),
-                                    transforms.CenterCrop(size=224),
+                                    transforms.CenterCrop(size=284),
                                     transforms.ToTensor()])
                                     #transforms.Normalize([0.485, 0.456, 0.406],
                                      #                    [0.229, 0.224, 0.225])])
 test_transforms = transforms.Compose([transforms.RandomResizedCrop(size=256, scale=(0.8, 1.0)),
                                     transforms.RandomRotation(degrees=15),
                                     transforms.RandomHorizontalFlip(),
-                                    transforms.CenterCrop(size=224),
+                                    transforms.CenterCrop(size=284),
                                     transforms.ToTensor()])
                                    # transforms.Normalize([0.485, 0.456, 0.406],
                                     #                     [0.229, 0.224, 0.225])])
 
 
-#train_data = datasets.ImageFolder(train_dir, transform=train_transform)
-#test_data = datasets.ImageFolder(test_dir, transform=test_transforms)
 
 
-# train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size,
-#      num_workers=num_workers, shuffle=True)
-# test_loader = torch.utils.data.DataLoader(test_data, batch_size=batch_size, 
-#      num_workers=num_workers)
-
-image_size = (224, 224)
+image_size = (284, 284)
 image_row_size = image_size[0] * image_size[1]
 
 
@@ -124,13 +117,24 @@ def test(model, perm=torch.arange(0, 224*224*3).long()):
         test_loss, correct, len(test_loader.dataset),
         accuracy))
 
-# Training settings 
-n_features = 2 # hyperparameter
+# Training settings  2 layer convolution
+n_features = 10 # hyperparameter
 
 model_cnn = CNN(input_size, n_features, output_size)
 optimizer = optim.SGD(model_cnn.parameters(), lr=0.01, momentum=0.5)
 print('Number of parameters: {}'.format(get_n_params(model_cnn)))
 
-for epoch in range(0, 1):
+for epoch in range(0, 5):
     train(epoch, model_cnn)
     test(model_cnn)
+
+# Training settings  4  Layer Convolution
+n_features = 20 # hyperparameter
+
+model_cnn = CNN4(input_size, n_features, output_size)
+optimizer = optim.SGD(model_cnn.parameters(), lr=0.01, momentum=0.5)
+print('Number of parameters: {}'.format(get_n_params(model_cnn)))
+
+# for epoch in range(0, 5):
+#     train(epoch, model_cnn)
+#     test(model_cnn)
