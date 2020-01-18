@@ -1,4 +1,5 @@
 ## Cats and Dogs classification
+<<<<<<< HEAD
 ---------------------------------
 In this project we write an algorithm that classify whether an image is cat or dog from the Cats and Dogs Dataset.
 
@@ -33,3 +34,8 @@ I later implemented a 4 layer convolutional neural network on the same Dataset.
 ----------------------------------------------------
 
 ### Run FIle : python main.py
+=======
+--------------------------------------
+This code Classifies the cats and Dogs datasets
+
+>>>>>>> 7c47a0a9a7ee302f9508212ccae7908a146fad9e
