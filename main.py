@@ -33,7 +33,7 @@ batch_size = 60
 
 
 # define training and test data directories
-data_dir = '../Cat_Dog_data/Datasets/'
+data_dir = 'Datasets/'
 train_dir = os.path.join(data_dir, 'train/')
 test_dir = os.path.join(data_dir, 'test/')
 
