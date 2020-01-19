@@ -5,6 +5,11 @@ In this project we write an algorithm that classify whether an image is cat or d
 
 ![Cats and Dogs Classification](catsandogs.jpg)
 
+## Data
+
+Creat a folder called Datasets, download Dataset from https://www.kaggle.com/tongpython/cat-and-dog. Put the data in the Dataset folder and run your code here.
+
+
 
 ## Important Information
 ----------------------------
