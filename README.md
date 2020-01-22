@@ -21,7 +21,8 @@ Creat a folder called Datasets, download Dataset from https://www.kaggle.com/ton
 
    -----------------------------------------
 ## Model Architecture
-    -Input Data Shape : 284*284*3
+    -Input Data Shape : 224*224*3
+![cats and Dogs Classification](CatandDogs.png)  
 
 I implemented a 2 layer convolutional neural network to classify images from the Cats and Dogs  Dataset.
 
@@ -36,6 +37,20 @@ Classification : log_softmax
 Optimizer : Gradient descent with Momentum
 
 ----------------------------------------------------
+##  Projection (visualization) of the model is shown as:
+
+![cats and Dogs Classification](Projection_Image.png)
+
+-----------------------------------------------------------
+## Images of Cats and Dogs Classification
+![cats and Dogs Classification](Cat_and_Dog_Image1.png)
+
+![cats and Dogs Classification](Cat-and_Dog_Image2.png)
+![cats and Dogs Classification](CatandDogs_Image2.png)
+
+---------------------------------------------------------
+## Loss of the Model
+![cats and Dogs Classification](Loss_Image.png)
 
 
 Run FIle : python main.py
