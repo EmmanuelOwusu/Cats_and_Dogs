@@ -46,7 +46,7 @@ Optimizer : Gradient descent with Momentum
 ![cats and Dogs Classification](Cat_and_Dog_Image1.png)
 
 ![cats and Dogs Classification](Cat-and_Dog_Image2.png)
-![cats and Dogs Classification](CatandDogs_Image2.png)
+![cats and Dogs Classification](predict_Image.png)
 
 ---------------------------------------------------------
 ## Loss of the Model
